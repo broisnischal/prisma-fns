@@ -10,15 +10,12 @@ export default Prisma.defineExtension((prisma) => {
           where: Prisma.Args<T, "findMany">["where"]
         ) {
           const context = Prisma.getExtensionContext(this);
-          const result = await (context as any).findMany({
+          const result: K = await (context as any).findMany({
             where,
             select: { [field]: true },
           });
 
-          return Object.values(result)[0] as Extract<
-            K,
-            Prisma.Result<T, null, "findMany">
-          >;
+          return result.map((item) => item[field]);
         },
       },
     },

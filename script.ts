@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import getValues from "./extension/prisma-utilityfn";
+import { getValues } from "./extension";
 
 const prisma = new PrismaClient().$extends(getValues);
 
@@ -11,8 +11,10 @@ async function main() {
   //   },
   // });
 
-  const user = await prisma.user.getValues("name", {
-    id: 1,
+  const user = await prisma.user.getValues("email", {
+    email: {
+      contains: "@",
+    },
   });
 
   console.log(user);
