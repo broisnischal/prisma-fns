@@ -2,6 +2,7 @@ import { Prisma } from "@prisma/client";
 
 export default Prisma.defineExtension((prisma) => {
   return prisma.$extends({
+    name: "getValues",
     model: {
       $allModels: {
         async getValues<T, K extends Prisma.Result<T, null, "findMany">>(
@@ -15,6 +16,7 @@ export default Prisma.defineExtension((prisma) => {
             select: { [field]: true },
           });
 
+          // @ts-expect-error
           return result.map((item) => item[field]);
         },
       },

@@ -16,19 +16,21 @@ describe("get values", () => {
   const xprisma = prisma.$extends(getValues);
 
   it("should get values", async () => {
+    await prisma.user.deleteMany();
+
     await xprisma.user.create({
       data: {
-        name: "Alice",
-        email: "alice@prisma.io",
+        name: "Nischal",
+        email: "nischal@prisma.io",
       },
     });
 
     const user = await xprisma.user.getValues("email", {
       email: {
-        contains: "@",
+        contains: "nischal@prisma.io",
       },
     });
 
-    expect(user).toEqual(["alice@prisma.io"]);
+    expect(user).toEqual(["nischal@prisma.io"]);
   });
 });
