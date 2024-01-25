@@ -1,7 +1,10 @@
 import { PrismaClient } from "@prisma/client";
-import { exists, getValues } from "./extension";
+import { exists, getValues, generateSlug } from "./src";
 
-const prisma = new PrismaClient().$extends(getValues).$extends(exists);
+const prisma = new PrismaClient()
+  .$extends(getValues)
+  .$extends(exists)
+  .$extends(generateSlug);
 
 async function main() {
   // const user = await prisma.user.create({
@@ -17,9 +20,7 @@ async function main() {
   //   },
   // });
 
-  const user = await prisma.user.exists({
-    id: 2,
-  });
+  const user = await prisma.user.findFirst();
 
   console.log(user);
 }
