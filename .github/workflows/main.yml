@@ -5,6 +5,9 @@ on:
       - master
 jobs:
   build:
+    name: Build
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,6 +21,6 @@ jobs:
           cache: pnpm
       - run: pnpm install --no-frozen-lockfile
       - run: pnpm run ci
-      # - run: npm publish
+      - run: npm publish
       # env:
-      # NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+      #   NODE_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
