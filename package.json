@@ -11,12 +11,14 @@
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "lint": "tsc",
     "prisma": "prisma generate",
-    "ci": "pnpm run prisma && pnpm run lint && pnpm run test && pnpm run build"
+    "ci": "pnpm run prisma && pnpm run lint && pnpm run test && pnpm run build",
+    "release": "pnpm run ci && changeset publish"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
     "@faker-js/faker": "^8.4.0",
     "@types/node": "^20.11.6",
     "prisma": "^5.8.1",
