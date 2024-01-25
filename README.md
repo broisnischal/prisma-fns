@@ -1,0 +1,1 @@
+# Utitlity function for Prisma
