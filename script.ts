@@ -1,10 +1,11 @@
 import { PrismaClient } from "@prisma/client";
-import { exists, getValues, generateSlug } from "./src";
+import { exists, getValues, generateSlug, save } from "./src";
 
 const prisma = new PrismaClient()
   .$extends(getValues)
   .$extends(exists)
-  .$extends(generateSlug);
+  .$extends(generateSlug)
+  .$extends(save);
 
 async function main() {
   // const user = await prisma.user.create({
@@ -21,6 +22,12 @@ async function main() {
   // });
 
   const user = await prisma.user.findFirst();
+
+  console.log(user);
+
+  if (!user) return;
+
+  user.email = "alice@prisma.iochanged";
 
   console.log(user);
 }
