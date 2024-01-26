@@ -1,5 +1,11 @@
 # prisma-fns
 
+## 1.1.3
+
+### Patch Changes
+
+- Added Singleton remember!
+
 ## 1.1.2
 
 ### Patch Changes
