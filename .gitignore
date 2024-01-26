@@ -4,3 +4,4 @@ node_modules
 script.ts
 dist
 build
+src/fn/pagination.ts

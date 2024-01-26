@@ -17,7 +17,8 @@
     "prepare": "husky",
     "format": "biome format --write ./src",
     "check": "biome check --apply ./src",
-    "b:lint": "biome lint ./src"
+    "b:lint": "biome lint ./src",
+    "studio": "prisma studio"
   },
   "husky": {
     "hooks": {

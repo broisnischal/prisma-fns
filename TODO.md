@@ -1,0 +1,6 @@
+- the pagination utils
+- the fuzzy search extension
+- the .$log in the end of the query so that it could work, or log also return the response
+- decrease, increase, math operations utils function
+- logPerf accepts the models which it should run onto
+- singleton if the devserver rerequires a bundle ☑️
