@@ -23,51 +23,81 @@ npm install prisma-fns
 
 ## Basic Usage
 
+#### Get Values
+
 ```ts
-import { PrismaClient } from "@prisma/client";
-import { log, exists, getValues, generateSlug, save } from "prisma-fns";
+// getValues (field, where)
+const prisma = new PrismaClient().$extends(getValues);
 
-// Create a new instance of PrismaClient extended with various functions
-const prisma = new PrismaClient()
-  .$extends(log)
-  .$extends(exists)
-  .$extends(getValues)
-  .$extends(generateSlug)
-  .$extends(save);
+const user = await prisma.user.getValues("email", {
+  email: {
+    contains: "@",
+  },
+});
+```
 
-// Now you can use the prisma instance with the added functions
+#### Log
 
-// Example: Check if a user with a specific ID exists
-async function doesUserExist(userId: number) {
-  const userExists = await prisma.$exists.user({ id: userId });
-  prisma.$log(
-    `User with ID ${userId} ${userExists ? "exists" : "does not exist"}`
-  );
+```ts
+// console.log
+const prisma = new PrismaClient().$extends(log);
+
+const user = await prisma.user.findFirst();
+
+prisma.$log(user);
+```
+
+#### Exists
+
+```ts
+const prisma = new PrismaClient().$extends(exists);
+
+// returns boolean
+const user = await prisma.user.exists({
+  id: 1,
+});
+```
+
+#### logPerf
+
+```ts
+const prisma = new PrismaClient().$extends(logPerf);
+
+const user = await prisma.user.findFirst();
+
+
+// logs in console
+{
+  model: 'User',
+  operation: 'findFirst',
+  args: {},
+  time: 25.3997129797935
 }
+```
 
-// Example: Get values from the database
-async function getAllUsers() {
-  const users = await prisma.$getValues.user.findMany();
-  prisma.$log(`All users: ${JSON.stringify(users)}`);
-}
+#### remember
 
-// Example: Generate a slug
-const title = "Example Blog Post Title";
-const slug = prisma.$generateSlug(title);
-prisma.$log(`Generated slug for "${title}": ${slug}`);
+```ts
+// creates singleton
+const prisma = new PrismaClient().$extends(remember);
+```
 
-// Example: Save data to the database
-const newData = {
-  /* Your data here */
-};
-const savedData = await prisma.$save.modelName.create({ data: newData });
-prisma.$log(`Saved data: ${JSON.stringify(savedData)}`);
+#### save
 
-// Example: Closing the Prisma client
-async function closePrisma() {
-  await prisma.$disconnect();
-  prisma.$log("Prisma client disconnected.");
-}
+```ts
+// saves object
+const prisma = new PrismaClient().$extends(save);
+```
+
+#### generate slug
+
+```ts
+const prisma = new PrismaClient().$extends(generateSlug);
+
+const user = await prisma.user.findFirst();
+
+// returns slug
+user.slug;
 ```
 
 ## Support

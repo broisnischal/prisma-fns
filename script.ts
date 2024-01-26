@@ -5,7 +5,9 @@ import {
   generateSlug,
   save,
   remember,
-  pagination,
+  log,
+  logPerf,
+  // pagination,
 } from "./src";
 
 const prisma = new PrismaClient()
@@ -14,25 +16,13 @@ const prisma = new PrismaClient()
   .$extends(generateSlug)
   .$extends(save)
   .$extends(remember)
-  .$extends(pagination);
+  .$extends(log)
+  .$extends(logPerf);
 
 async function main() {
-  // const user = await prisma.user.create({
-  //   data: {
-  //     name: "Alice",
-  //     email: "alice@prisma.io",
-  //   },
-  // });
+  // const prisma = new PrismaClient().$extends(logPerf);
 
-  // const user = await prisma.user.getValues("email", {
-  //   email: {
-  //     contains: "@",
-  //   },
-  // });
-
-  const user = await prisma.user.findMany({
-    take: 5,
-  });
+  const user = await prisma.user.findFirst();
 
   console.log(user);
 }

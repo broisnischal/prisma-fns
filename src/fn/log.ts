@@ -4,7 +4,7 @@ export default Prisma.defineExtension((prisma) => {
 	return prisma.$extends({
 		name: "log",
 		client: {
-			$log: (s: string) => console.log(s),
+			$log: <T>(s: T) => console.log(s) as never,
 			// async $totalQueries() {
 			//   const index_prisma_client_queries_total = 0;
 			//   const metricsCounters = await (

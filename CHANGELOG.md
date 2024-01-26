@@ -1,5 +1,11 @@
 # prisma-fns
 
+## 1.1.4
+
+### Patch Changes
+
+- Updated README.md
+
 ## 1.1.3
 
 ### Patch Changes
