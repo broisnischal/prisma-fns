@@ -20,3 +20,8 @@ README.md
 .npmignore
 .travis.yml
 .vscode
+biome.json
+seed.ts
+TODO.md
+CODE_OF_CONDUCT.md
+.husky

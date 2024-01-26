@@ -1,5 +1,11 @@
 # prisma-fns
 
+## 1.1.5
+
+### Patch Changes
+
+- removed unnecessary files
+
 ## 1.1.4
 
 ### Patch Changes
