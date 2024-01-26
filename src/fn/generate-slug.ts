@@ -1,27 +1,27 @@
 import { Prisma } from "@prisma/client";
 
 export default Prisma.defineExtension((prisma) => {
-  return prisma.$extends({
-    name: "generateSlug",
-    result: {
-      user: {
-        slug: {
-          needs: { name: true },
-          compute(data) {
-            if (!data.name) {
-              return;
-            }
-            return data.name
-              .toLowerCase()
-              .replace(/[^a-z0-9]/g, "-")
-              .replace(/-+/g, "-")
-              .replace(/^-/, "")
-              .replace(/-$/, "");
-          },
-        },
-      },
-    },
-  });
+	return prisma.$extends({
+		name: "generateSlug",
+		result: {
+			user: {
+				slug: {
+					needs: { name: true },
+					compute(data) {
+						if (!data.name) {
+							return;
+						}
+						return data.name
+							.toLowerCase()
+							.replace(/[^a-z0-9]/g, "-")
+							.replace(/-+/g, "-")
+							.replace(/^-/, "")
+							.replace(/-$/, "");
+					},
+				},
+			},
+		},
+	});
 });
 
 // const prisma = new PrismaClient().$extends({

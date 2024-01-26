@@ -36,9 +36,9 @@ import { describe, test, expect } from "vitest";
 // });
 
 describe("ci", () => {
-  test("should exists", async () => {
-    expect(true).toBe(true);
-  });
+	test("should exists", async () => {
+		expect(true).toBe(true);
+	});
 });
 
 // import { PrismaClient } from "@prisma/client";

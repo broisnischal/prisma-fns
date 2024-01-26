@@ -13,7 +13,25 @@
     "lint": "tsc",
     "prisma": "prisma generate",
     "ci": "pnpm run prisma && pnpm run lint && pnpm run test && pnpm run build",
-    "release": "pnpm run prisma && pnpm run lint && pnpm run test && pnpm run build && changeset publish"
+    "release": "pnpm run prisma && pnpm run lint && pnpm run test && pnpm run build && changeset publish",
+    "prepare": "husky",
+    "format": "biome format --write ./src",
+    "check": "biome check --apply ./src",
+    "b:lint": "biome lint ./src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./src/*.{ts,js}": [
+      "pnpm lint",
+      "pnpm format",
+      "pnpm check",
+      "pnpm b:lint",
+      "pnpm build"
+    ]
   },
   "keywords": [
     "prisma",
@@ -30,9 +48,12 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@biomejs/biome": "^1.5.3",
     "@changesets/cli": "^2.27.1",
     "@faker-js/faker": "^8.4.0",
     "@types/node": "^20.11.6",
+    "husky": "^9.0.6",
+    "lint-staged": "^15.2.0",
     "prisma": "^5.8.1",
     "ts-node": "^10.9.2",
     "tsup": "^8.0.1",
