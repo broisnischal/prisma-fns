@@ -1,6 +1,6 @@
 {
   "name": "prisma-fns",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "",
   "main": "./dist/index.js",
   "private": false,
@@ -15,9 +15,20 @@
     "ci": "pnpm run prisma && pnpm run lint && pnpm run test && pnpm run build",
     "release": "pnpm run prisma && pnpm run lint && pnpm run test && pnpm run build && changeset publish"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "prisma",
+    "utils",
+    "functions",
+    "typescript",
+    "prisma utils",
+    "database"
+  ],
+  "author": {
+    "name": "Nischal",
+    "url": "https://github.com/broisnischal/prisma-fns",
+    "email": "neeswebservice@gmail.com"
+  },
+  "license": "MIT",
   "devDependencies": {
     "@changesets/cli": "^2.27.1",
     "@faker-js/faker": "^8.4.0",
@@ -28,7 +39,20 @@
     "typescript": "^5.3.3",
     "vitest": "^1.2.1"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@prisma/client": "^5.8.1"
-  }
+  },
+  "sponsor": {
+    "url": "https:github.com/sponsors/broisnischal"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/broisnischal/prisma-fns.git"
+  },
+  "release": {
+    "branches": [
+      "master"
+    ]
+  },
+  "homepage": "https://github.com/broisnischal/prisma-fns#readme"
 }
