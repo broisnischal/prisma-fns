@@ -46,4 +46,4 @@ jobs:
           version: latest
       - name: Run Biome
         run: |
-          biome ci
+          biome ci ./src --verbose
