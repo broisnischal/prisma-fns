@@ -17,3 +17,6 @@ tsconfig.json
 script.ts
 LICENSE
 README.md
+.npmignore
+.travis.yml
+.vscode

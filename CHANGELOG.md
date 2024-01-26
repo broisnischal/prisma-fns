@@ -1,5 +1,11 @@
 # prisma-fns
 
+## 1.1.1
+
+### Patch Changes
+
+- Added CI, travis build status, Updated README.md, vscode settings
+
 ## 1.1.0
 
 ### Minor Changes
