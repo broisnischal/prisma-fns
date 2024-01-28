@@ -3,7 +3,7 @@
 // import exists from "./exists";
 // import { afterAll, afterEach, expect, test } from "vitest";
 
-import { describe, test, expect } from "vitest";
+import { describe, expect, test } from "vitest";
 
 // const prisma = new PrismaClient();
 
@@ -36,9 +36,9 @@ import { describe, test, expect } from "vitest";
 // });
 
 describe("ci", () => {
-  test("should exists", async () => {
-    expect(true).toBe(true);
-  });
+	test("should exists", async () => {
+		expect(true).toBe(true);
+	});
 });
 
 // import { PrismaClient } from "@prisma/client";

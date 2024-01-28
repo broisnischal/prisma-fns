@@ -1,5 +1,35 @@
 # prisma-fns
 
+## 1.1.5
+
+### Patch Changes
+
+- removed unnecessary files
+
+## 1.1.4
+
+### Patch Changes
+
+- Updated README.md
+
+## 1.1.3
+
+### Patch Changes
+
+- Added Singleton remember!
+
+## 1.1.2
+
+### Patch Changes
+
+- Updated README.md
+
+## 1.1.1
+
+### Patch Changes
+
+- Added CI, travis build status, Updated README.md, vscode settings
+
 ## 1.1.0
 
 ### Minor Changes

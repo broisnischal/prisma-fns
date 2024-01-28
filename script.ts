@@ -1,33 +1,28 @@
 import { PrismaClient } from "@prisma/client";
-import { exists, getValues, generateSlug, save } from "./src";
+import {
+  exists,
+  getValues,
+  generateSlug,
+  save,
+  remember,
+  log,
+  logPerf,
+  // pagination,
+} from "./src";
 
 const prisma = new PrismaClient()
   .$extends(getValues)
   .$extends(exists)
   .$extends(generateSlug)
-  .$extends(save);
+  .$extends(save)
+  .$extends(remember)
+  .$extends(log)
+  .$extends(logPerf);
 
 async function main() {
-  // const user = await prisma.user.create({
-  //   data: {
-  //     name: "Alice",
-  //     email: "alice@prisma.io",
-  //   },
-  // });
-
-  // const user = await prisma.user.getValues("email", {
-  //   email: {
-  //     contains: "@",
-  //   },
-  // });
+  // const prisma = new PrismaClient().$extends(logPerf);
 
   const user = await prisma.user.findFirst();
-
-  console.log(user);
-
-  if (!user) return;
-
-  user.email = "alice@prisma.iochanged";
 
   console.log(user);
 }
