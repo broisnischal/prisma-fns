@@ -1,6 +1,27 @@
-- the pagination utils
-- the fuzzy search extension
-- the .$log in the end of the query so that it could work, or log also return the response
-- decrease, increase, math operations utils function
-- logPerf accepts the models which it should run onto
-- singleton if the devserver rerequires a bundle ☑️
+- [ ] Custom Generators
+- [x] Extensions
+  - [x] Generate Singleton client
+  - [ ] Fuzzy search feature for specified model
+  - [ ] Increase Decrease Math Operations for field in provided model
+  - [ ] Pagination utils
+  - [ ] Luxon for date time fields
+  - [ ] Query Optimization Extension
+    - [ ] Toggle via slug
+    - [ ] Compare and Update
+    - [ ] Auto select field/model
+    - [ ] auto generate slug in provided model
+    - [ ] deselect password when querying
+    - [ ] more coming soon...
+  - [ ] Extras
+    - [x] log perf logger
+    - [ ] coming up
+- [ ] Docs website
+  - [ ] Create docs website
+  - [ ] Example Implementation
+- [ ] Tests
+  - [ ] Unit tests
+    - [ ] extensions
+- [x] Deploy to production
+  - [x] Set up hosting environment
+  - [x] Configure CI/CD pipeline
+  - [x] Deploy package

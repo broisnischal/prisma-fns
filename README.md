@@ -1,19 +1,13 @@
-# Prisma Utils
+# Prisma-Fns
 
-##### v1.2.0 Just landed :rocket:
+<!-- [![Build Status](https://travis-ci.org/broisnischal/prisma-fns.svg?branch=master)](https://travis-ci.org/broisnischal/prisma-fns) -->
 
 [![npm version](https://img.shields.io/npm/v/prisma-fns.svg)](https://www.npmjs.com/package/prisma-fns)
-[![Build Status](https://travis-ci.org/broisnischal/prisma-fns.svg?branch=master)](https://travis-ci.org/broisnischal/prisma-fns)
 ![GitHub Repo stars](https://img.shields.io/github/stars/broisnischal/prisma-fns?style=social)
 ![GitHub top language](https://img.shields.io/github/languages/top/broisnischal/prisma-fns?style=plastic)
 [![License](https://img.shields.io/npm/l/prisma-fns.svg)](https://opensource.org/licenses/MIT)
 
-Prisma Utils is a revolutionary utility extension for seamless Prisma integration. It enhances your workflow, simplifies common tasks and functions, and boosts the efficiency of your Prisma-powered applications.
-
-## Features
-
-- **Reusable fns:** Construct complex queries effortlessly.
-- **Utilities:** Additional tools to enhance your Prisma experience.
+Prisma-Fns is a revolutionary utility extension for seamless Prisma integration. It enhances your workflow, simplifies common tasks and functions, and boosts the efficiency of your Prisma-powered applications.
 
 ## Installation
 
@@ -100,6 +94,40 @@ const user = await prisma.user.findFirst();
 user.slug;
 ```
 
+## Progress
+
+- [ ] Custom Generators
+- [x] Extensions
+  - [x] Generate Singleton client
+  - [ ] Fuzzy search feature for specified model
+  - [ ] Increase Decrease Math Operations for field in provided model
+  - [ ] Pagination utils
+  - [ ] Luxon for date time fields
+  - [ ] Query Optimization Extension
+    - [ ] Toggle via slug
+    - [ ] Compare and Update
+    - [ ] Auto select field/model
+    - [ ] auto generate slug in provided model
+    - [ ] deselect password when querying
+    - [ ] more coming soon...
+  - [ ] Extras
+    - [x] log perf logger
+    - [ ] coming up
+- [ ] Docs website
+  - [ ] Create docs website
+  - [ ] Example Implementation
+- [ ] Tests
+  - [ ] Unit tests
+    - [ ] extensions
+- [x] Deploy to production
+  - [x] Set up hosting environment
+  - [x] Configure CI/CD pipeline
+  - [x] Deploy package
+
+### Contributing
+
+If you'd like to contribute, please follow our contribution guidelines.
+
 ## Support
 
 If you like the project, please consider supporting us by giving a ⭐️ on Github.
@@ -107,10 +135,6 @@ If you like the project, please consider supporting us by giving a ⭐️ on Git
 ### Bugs
 
 If you find a bug, please file an issue on [our issue tracker on GitHub](https://github.com/broisnischal/prisma-fns/issues)
-
-### Contributing
-
-If you'd like to contribute, please follow our contribution guidelines.
 
 ### License
 
