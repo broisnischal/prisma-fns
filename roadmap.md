@@ -31,29 +31,7 @@
 ## Version 1.2.0 (Future)
 
 - [ ] Extras:
-  - [ ] Implement Log Perf Logger
-
-## Version 2.0.0 (Future)
-
-- [ ] Documentation:
-  - [ ] Create Documentation Website
-
-## Version 2.1.0 (Future)
-
-- [ ] Example Implementation:
-  - [ ] Provide Example Implementations for Each Extension
-
-## Version 2.2.0 (Future)
-
-- [ ] Tests:
-  - [ ] Unit Tests for Extensions
-
-## Version 2.3.0 (Future)
-
-- [ ] Deployment:
-  - [ ] Set Up Hosting Environment
-  - [ ] Configure CI/CD Pipeline
-  - [ ] Deploy Package to Production
+  - [x] Implement Log Perf Logger
 
 ## Contribution and Support
 
