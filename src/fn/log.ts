@@ -2,7 +2,7 @@ import { Prisma } from "@prisma/client";
 
 export default Prisma.defineExtension((prisma) => {
 	return prisma.$extends({
-		name: "log",
+		name: "prisma-fns/log",
 		client: {
 			$log: <T>(s: T) => console.log(s) as never,
 			// async $totalQueries() {

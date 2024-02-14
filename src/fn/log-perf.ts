@@ -3,7 +3,7 @@ import { Prisma } from "@prisma/client";
 
 export default Prisma.defineExtension((prisma) => {
 	return prisma.$extends({
-		name: "logPerf",
+		name: "prisma-fns/logPerf",
 		query: {
 			async $allOperations({ model, operation, args, query }) {
 				const start = performance.now();

@@ -5,3 +5,5 @@ script.ts
 dist
 build
 src/fn/pagination.ts
+
+prisma/types

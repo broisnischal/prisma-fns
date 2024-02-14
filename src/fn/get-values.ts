@@ -2,7 +2,7 @@ import { Prisma } from "@prisma/client";
 
 export default Prisma.defineExtension((prisma) => {
 	return prisma.$extends({
-		name: "getValues",
+		name: "prisma-fns/getvalues",
 		model: {
 			$allModels: {
 				async getValues<T, K extends Prisma.Result<T, null, "findMany">>(

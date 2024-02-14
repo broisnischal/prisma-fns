@@ -75,5 +75,8 @@
       "master"
     ]
   },
-  "homepage": "https://github.com/broisnischal/prisma-fns#readme"
+  "homepage": "https://github.com/broisnischal/prisma-fns#readme",
+  "dependencies": {
+    "prisma-type-generator": "^1.0.0"
+  }
 }
