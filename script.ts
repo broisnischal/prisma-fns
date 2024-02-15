@@ -7,24 +7,30 @@ import {
   remember,
   log,
   logPerf,
+  updateIfNotExists,
+  undefineField,
   // pagination,
 } from "./src";
 
-const prisma = new PrismaClient()
-  .$extends(getValues)
-  .$extends(exists)
-  .$extends(generateSlug)
-  .$extends(save)
-  .$extends(remember)
-  .$extends(log)
-  .$extends(logPerf);
+const prisma = new PrismaClient().$extends(undefineField);
+// .$extends(getValues)
+// .$extends(exists)
+// .$extends(generateSlug)
+// .$extends(save)
+// .$extends(remember)
+// .$extends(log)
+// .$extends(logPerf);
 
 async function main() {
   // const prisma = new PrismaClient().$extends(logPerf);
 
   const user = await prisma.user.findFirst();
 
-  console.log(user);
+  const data = await prisma.user.findFirst();
+
+  const val = data?.undefineField();
+
+  console.log(val);
 }
 
 main()

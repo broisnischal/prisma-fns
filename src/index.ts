@@ -5,6 +5,8 @@ import log from "./fn/log";
 import logPerf from "./fn/log-perf";
 import remember from "./fn/remember";
 import save from "./fn/save";
+import undefineField from "./fn/undefineField";
+import updateIfNotExists from "./fn/updateIfNotExists";
 // import pagination from "./fn/pagination";
 
 export {
@@ -15,5 +17,7 @@ export {
 	generateSlug,
 	save,
 	remember,
+	updateIfNotExists,
+	undefineField,
 	// pagination,
 };

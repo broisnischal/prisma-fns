@@ -10,23 +10,22 @@ export default Prisma.defineExtension((prisma) => {
 		name: "prisma-fns/update-if-not-id-exists",
 		model: {
 			$allModels: {
-				async updateIfNotIdExists<T, A>(
+				async updateNotexists<T>(
 					this: T,
-					args: Prisma.Exact<A, Prisma.Args<T, "findFirst">>,
+					where: Prisma.Args<T, "findFirst">["where"],
 				) {
 					const context = Prisma.getExtensionContext(this);
+					const result = await (context as any).findFirst({ where });
 
-					const result = await (context as any).findFirst(args);
-
-					const user = await (context as any).findMany({
+					const users = await (context as any).findMany({
 						where: {
 							id: {
-								not: result?.id,
+								not: result.id,
 							},
 						},
 					});
 
-					return user;
+					return users;
 				},
 			},
 		},
