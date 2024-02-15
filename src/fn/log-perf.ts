@@ -1,5 +1,5 @@
 import util from "node:util";
-import { Prisma } from "@prisma/client";
+import { Prisma } from "@prisma/client/extension";
 
 export default Prisma.defineExtension((prisma) => {
 	return prisma.$extends({

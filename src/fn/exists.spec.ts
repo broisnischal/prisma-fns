@@ -1,4 +1,4 @@
-// import { PrismaClient } from "@prisma/client";
+// import { PrismaClient } from "@prisma/client/extension";
 // import { describe, it } from "node:test";
 // import exists from "./exists";
 // import { afterAll, afterEach, expect, test } from "vitest";
@@ -41,7 +41,7 @@ describe("ci", () => {
 	});
 });
 
-// import { PrismaClient } from "@prisma/client";
+// import { PrismaClient } from "@prisma/client/extension";
 // import { describe, it, afterEach, afterAll, expect } from "vitest";
 // import getValues from "./get-values";
 
